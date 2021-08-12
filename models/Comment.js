@@ -8,10 +8,14 @@ const ReplySchema = new Schema(
             default: () => new Types.ObjectId()
         },
         replyBody: {
-            type: String
+            type: String,
+            required: 'This has to actually say something!',
+            trim: true
         },
         writtenBy: {
-            type: String
+            type: String,
+            required: 'We need to know who wrote this!',
+            trim: true
         },
         createdAt: {
             type: Date,
@@ -30,10 +34,14 @@ const ReplySchema = new Schema(
 const CommentSchema = new Schema(
     {
         writtenBy: {
-            type: String
+            type: String,
+            required: 'You have to say who you are!',
+            trim: true
         },
         commentBody: {
-            type: String
+            type: String,
+            required: 'You have to actually comment!',
+            trim: true
         },
         createdAt: {
             type: Date,
